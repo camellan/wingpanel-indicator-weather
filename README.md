@@ -35,7 +35,7 @@ pkill -9 wingpanel
 
 ### NOTE: 
 
-Get secret key from [darksky.net](https://darksky.net/dev/account) and store it in your config file.
+Get secret key from [openweathermap.org](https://openweathermap.org/api) and store it in your config file.
 
     cat ~/.weather.config
     {
