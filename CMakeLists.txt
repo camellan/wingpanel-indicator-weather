@@ -1,5 +1,5 @@
 # This a sample CMakeLists.txt for compiling indicatos for Wingpanel
-# http://elementaryos.org/docs/developer-guide/cmake 
+# http://elementaryos.org/docs/developer-guide/cmake
 
 cmake_minimum_required (VERSION 2.6)
 cmake_policy (VERSION 2.6)

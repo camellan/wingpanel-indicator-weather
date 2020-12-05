@@ -19,15 +19,20 @@ public class Weather.Widgets.DisplayWidget : Gtk.Box {
 
 
     public void update_state (string state, double temperature) {
-        
+
+        var degreeTemp = temperature;
         // Convert the F to C and copy in label.
-        var degreeTemp =  (temperature - 32.0)*(0.55);
+        if (temperature > 100) {
+            degreeTemp =  (temperature - 32.0)*(0.55);
+        }
+        
         char[] buf = new char[double.DTOSTR_BUF_SIZE];
-        unowned string str = degreeTemp.format (buf, "%2.2g");
+        unowned string str = degreeTemp.format (buf, "%2.2g");       
+
         string icon = "weather-clear-symbolic";
         File map_file;
 
-     
+
         degree.label = "(N/A)";
 
         //Read file of weather discription and set icon accordingly.
@@ -35,12 +40,12 @@ public class Weather.Widgets.DisplayWidget : Gtk.Box {
         try {
             map_file = File.new_for_path (Environment.get_home_dir() + "/.weather-map.dat");
             stderr.printf("home dir: %s\n",Environment.get_home_dir());
-            
+
             if (map_file.query_exists ()) {
 
 		        var parser = new Json.Parser ();
                 var dis = new DataInputStream (map_file.read ());
-		        
+
                 parser.load_from_stream(dis,null);
 
                 var root_object = parser.get_root ().get_object ();
@@ -51,8 +56,8 @@ public class Weather.Widgets.DisplayWidget : Gtk.Box {
             }
         }catch (Error e) {
 		    stderr.printf ("Error: %s\n", e.message);
-		    return;      
-        }       
+		    return;
+        }
 
         image.icon_name = icon;
         degree.label = str + "\u00b0C";
