@@ -6,19 +6,16 @@
 
 ## Building from code
 
-It's recommended to create a clean build environment
 
-    mkdir build
-    cd build/
+Run `meson` to configure the build environment and then `ninja` to build
 
-Run `cmake` to configure the build environment and then `make` to build
+    meson build --prefix=/usr
+    cd build
+    ninja
 
-    cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-    make
+To install, use `ninja install`
 
-To install, use `make install`
-
-    sudo make install
+    sudo ninja install
 
 
 ## Installation
@@ -33,7 +30,7 @@ sudo cp libweather.so /usr/lib/x86_64-linux-gnu/wingpanel/libweather.so
 pkill -9 wingpanel
 ```
 
-### NOTE: 
+### NOTE:
 
 Get secret key from [openweathermap.org](https://openweathermap.org/api) and store it in your config file.
 

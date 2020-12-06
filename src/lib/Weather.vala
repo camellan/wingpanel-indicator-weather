@@ -83,6 +83,6 @@ string get_ip(Soup.Session session) {
         stderr.printf ("I guess something is not working... %s \n", e.message);
     }
     display_widget.update_state(info.short_discription,info.temperature);
-
+ 
     return;
 }
