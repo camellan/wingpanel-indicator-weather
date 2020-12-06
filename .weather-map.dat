@@ -7,11 +7,12 @@
 	"Rain and Breezy": "weather-showers-symbolic",
 	"Snow": "weather-snow-symbolic",
 	"Partly Cloudy": "weather-few-clouds-symbolic",
-	"Cloudy": "weather-few-clouds-symbolic",
+	"Clouds": "weather-few-clouds-symbolic",
 	"Humid and Mostly Cloudy": "weather-few-clouds-symbolic",
 	"Mostly Cloudy": "weather-few-clouds-symbolic",
 	 "Overcast": "weather-overcast-symbolic",
 	 "Breezy": "weather-windy-symbolic",
-	 "Breezy and Overcast": "weather-windy-symbolic"
+	 "Breezy and Overcast": "weather-windy-symbolic",
+	 "Mist": "weather-fog-symbolic"
 }
 
