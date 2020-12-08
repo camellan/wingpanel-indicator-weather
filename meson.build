@@ -14,6 +14,7 @@ shared_module(
     'src/Indicator.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/lib/Weather.vala',
+    name_prefix: '',
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
@@ -26,5 +27,6 @@ shared_module(
     install: true,
     install_dir : wingpanel_dep.get_pkgconfig_variable('indicatorsdir')
 )
+meson.add_install_script('meson/post_install.py')
 
 subdir('po')
